@@ -1,0 +1,413 @@
+[gd_scene load_steps=44 format=3 uid="uid://c1vxue1f3s2c6"]
+
+[ext_resource type="AudioStream" uid="uid://n36ctq1idep5" path="res://assets/sfx/wind.wav" id="1_8ws0r"]
+[ext_resource type="Texture2D" uid="uid://cf0vrv0xg8n56" path="res://assets/images/background/sky.png" id="1_fwhbp"]
+[ext_resource type="Texture2D" uid="uid://b3mpfxtck07s6" path="res://assets/images/background/clouds.png" id="2_h1x4h"]
+[ext_resource type="AudioStream" uid="uid://dq3fpmtt3loir" path="res://assets/sfx/doorKnock.wav" id="2_hftmb"]
+[ext_resource type="AudioStream" uid="uid://cqnjhbq8cumum" path="res://assets/sfx/doorOpen.wav" id="3_4ylms"]
+[ext_resource type="Texture2D" uid="uid://bk6euo8bduoeq" path="res://assets/images/background/phonelines.png" id="3_gkb41"]
+[ext_resource type="Texture2D" uid="uid://bsin512je76xh" path="res://assets/images/background/combinedBackground.png" id="3_vghb4"]
+[ext_resource type="Texture2D" uid="uid://cdof8ajsfbe74" path="res://assets/images/background/grassBackground.png" id="4_ntta0"]
+[ext_resource type="AudioStream" uid="uid://efuea1odw8b6" path="res://assets/sfx/happy.wav" id="4_tgagv"]
+[ext_resource type="Texture2D" uid="uid://b1uh05m2ul20b" path="res://assets/images/background/ocean.png" id="5_gdmsa"]
+[ext_resource type="Texture2D" uid="uid://ctm5s4ufhh7d1" path="res://assets/images/background/grassForeground.png" id="5_henac"]
+[ext_resource type="Texture2D" uid="uid://dvam7esrrusu1" path="res://assets/images/character/character.png" id="5_p50bf"]
+[ext_resource type="Script" path="res://scripts/Character.gd" id="6_p62um"]
+[ext_resource type="Texture2D" uid="uid://dmgca5g1rn7kw" path="res://assets/images/background/fuji.png" id="6_spxsa"]
+[ext_resource type="Texture2D" uid="uid://divesn5dwshdg" path="res://assets/images/UI/border.png" id="6_xsnhq"]
+[ext_resource type="Texture2D" uid="uid://c0qx0nrxbdp2h" path="res://assets/images/background/hills.png" id="7_vrbmx"]
+[ext_resource type="Script" path="res://scripts/HouseSpawner.gd" id="9_0dodp"]
+[ext_resource type="Script" path="res://scripts/FlowerSpawner.gd" id="10_bboar"]
+[ext_resource type="AudioStream" uid="uid://cv5kbydtb4usb" path="res://assets/sfx/harvest.wav" id="11_5ajnb"]
+[ext_resource type="AudioStream" uid="uid://b1wvynkyo5njh" path="res://assets/sfx/cycling.wav" id="13_c5rws"]
+[ext_resource type="Texture2D" uid="uid://3gx65vvofvll" path="res://assets/images/UI/inventory.png" id="13_vdqvd"]
+[ext_resource type="Texture2D" uid="uid://dqion8u5x0e2b" path="res://assets/images/UI/potionStation.png" id="14_uho7b"]
+[ext_resource type="Texture2D" uid="uid://l7ecnr7m0uca" path="res://assets/images/UI/potionInventory.png" id="15_5s1nr"]
+[ext_resource type="Script" path="res://scripts/Inventory.gd" id="16_7jpu4"]
+[ext_resource type="Theme" uid="uid://0p7filibo58l" path="res://assets/fonts/sevenSegmentTheme.tres" id="17_r28m8"]
+[ext_resource type="PackedScene" uid="uid://b32vhnamswkc3" path="res://scenes/flowerParticles/BlueParticle.tscn" id="18_ld8wx"]
+[ext_resource type="PackedScene" uid="uid://c86abufnpc3vw" path="res://scenes/flowerParticles/YellowParticle.tscn" id="19_emdtr"]
+[ext_resource type="Texture2D" uid="uid://d1ns5jqfx7vmm" path="res://assets/images/UI/potions/bluePotion.png" id="20_gmpsy"]
+[ext_resource type="PackedScene" uid="uid://bma701ucg7iow" path="res://scenes/flowerParticles/RedParticle.tscn" id="20_u4gvd"]
+[ext_resource type="PackedScene" uid="uid://b0srubd8sixim" path="res://scenes/flowerParticles/PurpleParticle.tscn" id="21_fqiop"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiy5a"]
+atlas = ExtResource("5_p50bf")
+region = Rect2(0, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22v0y"]
+atlas = ExtResource("5_p50bf")
+region = Rect2(27, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjawi"]
+atlas = ExtResource("5_p50bf")
+region = Rect2(54, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbpmp"]
+atlas = ExtResource("5_p50bf")
+region = Rect2(81, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxhn5"]
+atlas = ExtResource("5_p50bf")
+region = Rect2(108, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el255"]
+atlas = ExtResource("5_p50bf")
+region = Rect2(135, 0, 27, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctfpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiy5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22v0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjawi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbpmp")
+}],
+"loop": true,
+"name": &"cycle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxhn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el255")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmkn8"]
+atlas = ExtResource("14_uho7b")
+region = Rect2(0, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yhni"]
+atlas = ExtResource("14_uho7b")
+region = Rect2(31, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajs33"]
+atlas = ExtResource("14_uho7b")
+region = Rect2(62, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8kxu"]
+atlas = ExtResource("14_uho7b")
+region = Rect2(93, 0, 31, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4lp2"]
+atlas = ExtResource("14_uho7b")
+region = Rect2(124, 0, 31, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfpg5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmkn8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yhni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajs33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8kxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4lp2")
+}],
+"loop": true,
+"name": &"drip",
+"speed": 3.0
+}]
+
+[node name="Main" type="Node2D"]
+
+[node name="WindSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_8ws0r")
+volume_db = -20.0
+autoplay = true
+
+[node name="KnockSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hftmb")
+
+[node name="DoorOpenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4ylms")
+
+[node name="HappySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tgagv")
+
+[node name="GameCanvas" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="GameCanvas"]
+
+[node name="Sky" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sky" type="Sprite2D" parent="GameCanvas/ParallaxBackground/Sky"]
+texture = ExtResource("1_fwhbp")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+motion_scale = Vector2(0.03, 0.03)
+motion_mirroring = Vector2(480, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/Clouds"]
+texture = ExtResource("2_h1x4h")
+centered = false
+
+[node name="CombinedBackground" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+motion_scale = Vector2(0.01, 0.01)
+motion_mirroring = Vector2(996, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/CombinedBackground"]
+texture = ExtResource("3_vghb4")
+centered = false
+
+[node name="Ocean" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+visible = false
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/Ocean"]
+texture = ExtResource("5_gdmsa")
+centered = false
+
+[node name="Fuji" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+visible = false
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/Fuji"]
+texture = ExtResource("6_spxsa")
+centered = false
+
+[node name="Hills" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+visible = false
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/Hills"]
+texture = ExtResource("7_vrbmx")
+centered = false
+
+[node name="Powerlines" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(158, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/Powerlines"]
+position = Vector2(0, 13)
+texture = ExtResource("3_gkb41")
+centered = false
+
+[node name="GrassBackground" type="ParallaxLayer" parent="GameCanvas/ParallaxBackground"]
+motion_mirroring = Vector2(192, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxBackground/GrassBackground"]
+position = Vector2(0, 42)
+texture = ExtResource("4_ntta0")
+centered = false
+
+[node name="HouseSpawner" type="Node2D" parent="GameCanvas"]
+position = Vector2(-195, -1)
+script = ExtResource("9_0dodp")
+
+[node name="FlowerSpawner" type="Node2D" parent="GameCanvas"]
+script = ExtResource("10_bboar")
+
+[node name="HarvestSound" type="AudioStreamPlayer" parent="GameCanvas/FlowerSpawner"]
+stream = ExtResource("11_5ajnb")
+
+[node name="Camera2D" type="Camera2D" parent="GameCanvas"]
+anchor_mode = 0
+
+[node name="Character" type="AnimatedSprite2D" parent="GameCanvas"]
+position = Vector2(9, 32)
+sprite_frames = SubResource("SpriteFrames_ctfpd")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.513688
+centered = false
+script = ExtResource("6_p62um")
+
+[node name="CycleSound" type="AudioStreamPlayer" parent="GameCanvas/Character"]
+stream = ExtResource("13_c5rws")
+volume_db = -80.0
+
+[node name="ParallaxForeground" type="ParallaxBackground" parent="GameCanvas"]
+layer = 10
+scroll_base_scale = Vector2(1.2, 1.2)
+
+[node name="GrassForeground" type="ParallaxLayer" parent="GameCanvas/ParallaxForeground"]
+motion_mirroring = Vector2(192, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="GameCanvas/ParallaxForeground/GrassForeground"]
+position = Vector2(0, 50)
+texture = ExtResource("5_henac")
+centered = false
+
+[node name="UICanvas" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="UI" type="Control" parent="UICanvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+mouse_filter = 1
+metadata/_edit_lock_ = true
+
+[node name="Border" type="TextureRect" parent="UICanvas/UI"]
+layout_mode = 1
+offset_right = 96.0
+offset_bottom = 96.0
+mouse_filter = 2
+texture = ExtResource("6_xsnhq")
+metadata/_edit_lock_ = true
+
+[node name="Inventory" type="TextureRect" parent="UICanvas/UI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 59.0
+offset_right = 74.0001
+offset_bottom = 93.0
+texture = ExtResource("13_vdqvd")
+script = ExtResource("16_7jpu4")
+
+[node name="BlueCount" type="Label" parent="UICanvas/UI/Inventory"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 6.0
+offset_right = 27.0
+offset_bottom = 20.0
+theme = ExtResource("17_r28m8")
+text = "0"
+
+[node name="RedCount" type="Label" parent="UICanvas/UI/Inventory"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 19.0
+offset_right = 36.0
+offset_bottom = 33.0
+theme = ExtResource("17_r28m8")
+text = "0"
+
+[node name="PurpleCount" type="Label" parent="UICanvas/UI/Inventory"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 6.0
+offset_right = 45.0
+offset_bottom = 20.0
+theme = ExtResource("17_r28m8")
+text = "0"
+
+[node name="YellowCount" type="Label" parent="UICanvas/UI/Inventory"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 19.0
+offset_right = 54.0
+offset_bottom = 33.0
+theme = ExtResource("17_r28m8")
+text = "0"
+
+[node name="BlueParticle" parent="UICanvas/UI/Inventory" instance=ExtResource("18_ld8wx")]
+position = Vector2(11, 11)
+
+[node name="YellowParticle" parent="UICanvas/UI/Inventory" instance=ExtResource("19_emdtr")]
+position = Vector2(38, 25)
+
+[node name="RedParticle" parent="UICanvas/UI/Inventory" instance=ExtResource("20_u4gvd")]
+position = Vector2(20, 23)
+
+[node name="PurpleParticle" parent="UICanvas/UI/Inventory" instance=ExtResource("21_fqiop")]
+position = Vector2(29, 12)
+
+[node name="PotionStation" type="Control" parent="UICanvas/UI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="PotionStationSprite" type="AnimatedSprite2D" parent="UICanvas/UI/PotionStation"]
+position = Vector2(77, 76)
+sprite_frames = SubResource("SpriteFrames_sfpg5")
+autoplay = "default"
+frame_progress = 0.29372
+
+[node name="PotionInventory" type="TextureRect" parent="UICanvas/UI"]
+visible = false
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 49.0
+texture = ExtResource("15_5s1nr")
+
+[node name="Grid" type="GridContainer" parent="UICanvas/UI/PotionInventory"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 33.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 5
+
+[node name="TextureRect" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect2" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect3" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect4" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect5" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect6" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect7" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect8" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect9" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="TextureRect10" type="TextureRect" parent="UICanvas/UI/PotionInventory/Grid"]
+layout_mode = 2
+texture = ExtResource("20_gmpsy")
+
+[node name="GoButton" type="Button" parent="UICanvas/UI"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 58.0
+offset_right = 94.0
+offset_bottom = 95.0

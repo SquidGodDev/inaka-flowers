@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6oanoc833wsu"]
+
+[ext_resource type="Texture2D" uid="uid://nplwjio8hp81" path="res://assets/images/background/flowers/grass.png" id="1_hcv1k"]
+[ext_resource type="Script" path="res://scripts/Flower.gd" id="2_u66k0"]
+[ext_resource type="Texture2D" uid="uid://feekv38nunb7" path="res://assets/images/background/flowers/blue.png" id="3_xv8no"]
+[ext_resource type="Texture2D" uid="uid://b1pmljkefscmn" path="res://assets/images/background/flowers/red.png" id="4_noddy"]
+[ext_resource type="Texture2D" uid="uid://c78v3aqx02do6" path="res://assets/images/background/flowers/purple.png" id="5_v7mgq"]
+[ext_resource type="Texture2D" uid="uid://6dsdoieles1t" path="res://assets/images/background/flowers/yellow.png" id="6_e0ohu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hofxc"]
+size = Vector2(7, 9)
+
+[node name="Flower" type="Sprite2D"]
+texture = ExtResource("1_hcv1k")
+centered = false
+offset = Vector2(0, -9)
+script = ExtResource("2_u66k0")
+blueTexture = ExtResource("3_xv8no")
+redTexture = ExtResource("4_noddy")
+purpleTexture = ExtResource("5_v7mgq")
+yellowTexture = ExtResource("6_e0ohu")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hofxc")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

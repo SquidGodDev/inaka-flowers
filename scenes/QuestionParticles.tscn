@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://e8s0ipohgl1n"]
+
+[ext_resource type="Texture2D" uid="uid://bhjifh4fd6ami" path="res://assets/images/UI/questionMark.png" id="1_i7c7e"]
+
+[sub_resource type="Gradient" id="Gradient_8nqcw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="QuestionParticles" type="CPUParticles2D"]
+amount = 3
+one_shot = true
+texture = ExtResource("1_i7c7e")
+emission_shape = 1
+emission_sphere_radius = 4.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 30)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+color_ramp = SubResource("Gradient_8nqcw")

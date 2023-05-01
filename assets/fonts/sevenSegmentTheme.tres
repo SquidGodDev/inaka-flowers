@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://0p7filibo58l"]
+
+[ext_resource type="FontFile" uid="uid://bum1elgyl3elc" path="res://assets/fonts/sevenSegment.ttf" id="1_kvkqf"]
+
+[resource]
+default_font = ExtResource("1_kvkqf")
+default_font_size = 16

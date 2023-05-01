@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh5un7y5138yi"]
+
+[ext_resource type="Texture2D" uid="uid://c778dl2g0y8hc" path="res://assets/images/background/house/houseOutlined.png" id="1_utf08"]
+[ext_resource type="Script" path="res://scripts/House.gd" id="2_slpel"]
+[ext_resource type="Texture2D" uid="uid://bncvtyghwb6co" path="res://assets/images/background/house/house.png" id="3_rk5k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0cmh"]
+size = Vector2(36, 27)
+
+[node name="House" type="Sprite2D"]
+texture = ExtResource("1_utf08")
+centered = false
+script = ExtResource("2_slpel")
+houseTexture = ExtResource("3_rk5k1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, 13.5)
+shape = SubResource("RectangleShape2D_d0cmh")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
